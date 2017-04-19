@@ -1,0 +1,133 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/inProgress-team/react-native-meteor#readme">react-native-meteor (v1.0.3)</a>
+</h1>
+<h4>Full Meteor Client for React Native</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-native-meteor">module react-native-meteor</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-native-meteor.</span>Random</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-native-meteor.Random">module react-native-meteor.Random</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-native-meteor.Random.id">
+            function <span class="apidocSignatureSpan">react-native-meteor.Random.</span>id
+            <span class="apidocSignatureSpan">(count = 17)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-native-meteor" id="apidoc.module.react-native-meteor">module react-native-meteor</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-native-meteor.Random" id="apidoc.module.react-native-meteor.Random">module react-native-meteor.Random</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-native-meteor.Random.id" id="apidoc.element.react-native-meteor.Random.id">
+        function <span class="apidocSignatureSpan">react-native-meteor.Random.</span>id
+        <span class="apidocSignatureSpan">(count = 17)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">id(count = 17) {
+  let res = "";
+  for(let i=0;i&lt;count;i++) {
+    res+=UNMISTAKABLE_CHARS[Math.floor(Math.random() * UNMISTAKABLE_CHARS.length)];
+  }
+  return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if('_id' in item) {
+  if(!item._id || typeof item._id != 'string') {
+    return callback("Meteor requires document _id fields to be non-empty strings");
+  }
+  id = item._id;
+} else {
+  id = item._id = Random.<span class="apidocCodeKeywordSpan">id</span>();
+}
+
+if(this._collection.get(id)) return callback({error: 409, reason: `Duplicate key _id with value ${id}`});
+
+this._collection.upsert(item);
+Data.waitDdpConnected(()=&gt;{
+  call(`/${this._name}/insert`, item, err =&gt; {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
